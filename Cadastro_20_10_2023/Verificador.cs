@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 
 public static class Verificador
 {
@@ -121,5 +122,54 @@ public static class Verificador
                 return false;
             }
         }
+    }
+    public static void btnValidarCNPJ_Click(string cnpj)
+    {
+        cnpj = cnpj.Replace(".", "");
+        cnpj = cnpj.Replace("-", "");
+        cnpj = cnpj.Replace("/", "");
+
+        if (ValidarCNPJ(cnpj))
+        {
+            MessageBox.Show("CNPJ válido!");
+        }
+        else
+        {
+            MessageBox.Show("CNPJ inválido!");
+        }
+    }
+
+    public static bool ValidarCNPJ(string cnpj)
+    {
+        if (cnpj.Length != 14)
+            return false;
+
+        int soma = 0;
+        for (int i = 0; i < 12; i++)
+        {
+            int num = int.Parse(cnpj[i].ToString());
+            soma += num * (6 - (i % 6 + 1));
+        }
+
+        int resto = soma % 11;
+        int digito1 = resto < 2 ? 0 : 11 - resto;
+
+        if (int.Parse(cnpj[12].ToString()) != digito1)
+            return false;
+
+        soma = 0;
+        for (int i = 0; i < 13; i++)
+        {
+            int num = int.Parse(cnpj[i].ToString());
+            soma += num * (7 - (i % 7 + 1));
+        }
+
+        resto = soma % 11;
+        int digito2 = resto < 2 ? 0 : 11 - resto;
+
+        if (int.Parse(cnpj[13].ToString()) != digito2)
+            return false;
+
+        return true;
     }
 }

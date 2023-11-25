@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Cadastro_20_10_2023.Configuracoes;
+using Google.Protobuf.WellKnownTypes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,13 +15,60 @@ namespace Cadastro_20_10_2023
 {
     public partial class TelaCadastro : Form
     {
-        bool transicao;
+        public List<Funcionario> listaFuncionario = new List<Funcionario>();
         public TelaCadastro()
         {
+            var func = new Funcionario();
             InitializeComponent();
+            Inserir(func);
+            Consultar();
         }
+       
+        void Inserir(Funcionario f)
+        {
+            var nomeFunc = f.Nome;
+            var cpfFunc = f.CPF;
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+            try
+            {
+                Conexao conexao = new Conexao();
+
+                var comando = conexao.Comando("INSERT INTO funcionario (nome_fun, cpf_fun) VALUES (@nome, @cpf)");
+                comando.Parameters.AddWithValue("@nome", nomeFunc);
+                comando.Parameters.AddWithValue("cpf", cpfFunc);
+
+                var resultado = comando.ExecuteNonQuery();
+                
+                if(resultado > 0)
+                {
+                    MessageBox.Show("Funcionario cadastrado com sucesso");
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        void Consultar()
+        {
+            try
+            {
+                var conexao = new Conexao();
+                var comando = conexao.Comando("SELECT * FROM funcionario");
+                var leitor = comando.ExecuteReader();
+                string resultado = null;
+                while (leitor.Read())
+                {
+                    resultado += "\n" + leitor.GetString("nome_fun");
+                }
+                MessageBox.Show(resultado);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+            private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -101,6 +150,8 @@ namespace Cadastro_20_10_2023
                     f.Estado = txbox_estado.Text;
                     f.Cidade = txbox_cidade.Text;
                     f.Complemento = txbox_complemento.Text;
+                    
+                    listaFuncionario.Add(f);
                     MessageBox.Show("Cadastrado com sucesso!");
 
                 }
@@ -118,7 +169,25 @@ namespace Cadastro_20_10_2023
 
         private void guna2CircleButton1_Click(object sender, EventArgs e)
         {
+            TelaInicial t = new TelaInicial();
+            t.Close();
             this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            txbox_nome.Text = "";
+            txbox_cpf.Text = "";
+            txbox_dn.Text = "";
+            txbox_rg.Text = "";
+            txbox_ec.Text = "";
+            txbox_salario.Text = "";
+            txbox_rua.Text = "";
+            txbox_avenida.Text = "";
+            txbox_estado.Text = "";
+            txbox_cidade.Text = "";
+            txbox_numero.Text = "";
+            txbox_complemento.Text = "";
         }
     }
 }

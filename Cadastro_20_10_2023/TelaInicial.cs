@@ -31,7 +31,16 @@ namespace Cadastro_20_10_2023
 
         private void guna2CircleButton1_Click(object sender, EventArgs e)
         {
+            TelaCadastro T = new TelaCadastro();
+            T.Close();
             this.Close();
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            ListaFuncionario T = new ListaFuncionario();
+            T.Show();
+            this.Hide();
         }
     }
 }
