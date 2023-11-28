@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cadastro_20_10_2023.Configuracoes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,58 @@ namespace Cadastro_20_10_2023
             InitializeComponent();
         }
 
+        public void Inserir(Empresa em)
+        {
+            string nFantasia = em.NFantasia;
+            string rSocial = em.RSocial;
+            string sCadastral = em.SCadastral;
+            string cnpj = em.CNPJ;
+            string data = em.DInicio;
+            string rTribunal = em.RTribunal;
+            int telefone = em.Telefone;
+            string cSocial = em.CSocial;
+            string tipo = em.Tipo;
+            string cpf = em.CPF;
+            string pempresa = em.PEmpresa;
+            string nproprietario = em.NProprietario;
+            string njuridica = em.NJuridica;
+            string rua = em.Rua;
+            int numero = em.Numero;
+            string avenida = em.Avenida;
+            string estado = em.Estado;
+            string cidade = em.Cidade;
+            string complemento = em.Complemento;
+            
+            Conexao conexao = new Conexao();
+
+            var comando = conexao.Comando("INSERT INTO Empresa (nomef_emp, rsocial_emp, scadastral_emp, cnpj_emp, dinicio_emp, rtribunal_emp, telefone_emp, csocial_emp, cpf_emp, tipo_emp, nproprietario_emp, pempresa_emp, rua_emp, numero_emp, avenida_emp, cidade_emp,complemento_emp ) VALUES " + "(@nomef, @rsocial, @scadastral, @cnpj, @dinicio, @rtribunal, @telefone, @csocial, @cpf, @tipo, @nproprietario, @pempresa, @njuridica, @rua, @numero, @avenida, @cidade, @complemento)");
+            comando.Parameters.AddWithValue("@nomef", nFantasia);
+            comando.Parameters.AddWithValue("@rsocial", rSocial);
+            comando.Parameters.AddWithValue("@scadastral", sCadastral);
+            comando.Parameters.AddWithValue("@cnpj", cnpj);
+            comando.Parameters.AddWithValue("@dinicio", data);
+            comando.Parameters.AddWithValue("@rtribunal", rTribunal);
+            comando.Parameters.AddWithValue("@telefone", telefone);
+            comando.Parameters.AddWithValue("@csocial", cSocial);
+            comando.Parameters.AddWithValue("@cpf", cpf);
+            comando.Parameters.AddWithValue("@tipo", tipo);
+            comando.Parameters.AddWithValue("@nproprietario", nproprietario);
+            comando.Parameters.AddWithValue("@pempresa", pempresa);
+            comando.Parameters.AddWithValue("@njuridica", njuridica);
+            comando.Parameters.AddWithValue("@rua", rua);
+            comando.Parameters.AddWithValue("@numero", numero);
+            comando.Parameters.AddWithValue("@avenida", avenida);
+            comando.Parameters.AddWithValue("@cidade", cidade);
+            comando.Parameters.AddWithValue("@complemento", complemento);
+
+            var resultado = comando.ExecuteNonQuery();
+
+            if (resultado > 0)
+            {
+                MessageBox.Show("Empresa cadastrado com sucesso");
+            }
+
+        }
         private void txbox_cidade_TextChanged(object sender, EventArgs e)
         {
 
@@ -91,6 +144,7 @@ namespace Cadastro_20_10_2023
                         em.PEmpresa = "Média";
                     }
                     em.NProprietario = txbox_np.Text;
+                    em.NJuridica = txbox_nj.Text;
 
                     em.Rua = txbox_rua.Text;
                     em.Numero = Convert.ToInt32(txbox_numero.Text);
@@ -99,6 +153,9 @@ namespace Cadastro_20_10_2023
                     em.Cidade = txbox_cidade.Text;
                     em.Complemento = txbox_complemento.Text;
 
+                    Program.listaEmpresa.Add(em);
+                    Inserir(em);
+                  
                 }
                 catch (Exception ex)
                 {

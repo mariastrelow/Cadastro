@@ -111,10 +111,10 @@
             this.panelChildForm.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panelChildForm.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelChildForm.BackgroundImage")));
             this.panelChildForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelChildForm.Location = new System.Drawing.Point(53, 47);
+            this.panelChildForm.Location = new System.Drawing.Point(42, 47);
             this.panelChildForm.Margin = new System.Windows.Forms.Padding(4);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(1165, 674);
+            this.panelChildForm.Size = new System.Drawing.Size(1176, 674);
             this.panelChildForm.TabIndex = 10;
             this.panelChildForm.Paint += new System.Windows.Forms.PaintEventHandler(this.panelChildForm_Paint);
             // 
@@ -239,13 +239,13 @@
             this.sidebear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(0)))), ((int)(((byte)(104)))));
             this.sidebear.Controls.Add(this.guna2Panel1);
             this.sidebear.Controls.Add(this.menuContainer);
-            this.sidebear.Controls.Add(this.panel6);
-            this.sidebear.Controls.Add(this.panel2);
-            this.sidebear.Controls.Add(this.panel1);
             this.sidebear.Controls.Add(this.panel5);
+            this.sidebear.Controls.Add(this.panel1);
+            this.sidebear.Controls.Add(this.panel2);
+            this.sidebear.Controls.Add(this.panel6);
             this.sidebear.Location = new System.Drawing.Point(0, 48);
             this.sidebear.MaximumSize = new System.Drawing.Size(251, 673);
-            this.sidebear.MinimumSize = new System.Drawing.Size(57, 673);
+            this.sidebear.MinimumSize = new System.Drawing.Size(46, 673);
             this.sidebear.Name = "sidebear";
             this.sidebear.Size = new System.Drawing.Size(251, 673);
             this.sidebear.TabIndex = 0;
@@ -263,7 +263,7 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.guna2Button5);
-            this.panel5.Location = new System.Drawing.Point(3, 420);
+            this.panel5.Location = new System.Drawing.Point(3, 255);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(271, 51);
@@ -272,7 +272,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.guna2Button3);
-            this.panel1.Location = new System.Drawing.Point(3, 365);
+            this.panel1.Location = new System.Drawing.Point(3, 310);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(271, 51);
@@ -281,7 +281,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.guna2Button6);
-            this.panel2.Location = new System.Drawing.Point(3, 310);
+            this.panel2.Location = new System.Drawing.Point(3, 365);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(271, 51);
@@ -315,7 +315,7 @@
             // panel6
             // 
             this.panel6.Controls.Add(this.guna2Button7);
-            this.panel6.Location = new System.Drawing.Point(3, 255);
+            this.panel6.Location = new System.Drawing.Point(3, 420);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(271, 51);

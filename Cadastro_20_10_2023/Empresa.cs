@@ -9,7 +9,7 @@ namespace Cadastro_20_10_2023
 {
     public class Empresa
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string NFantasia { get; set; }
         public string RSocial { get; set; }
         public string SCadastral { get; set; }
@@ -30,12 +30,13 @@ namespace Cadastro_20_10_2023
         public string Cidade { get; set; }
         public string Complemento { get; set; }
 
-        public Empresa() 
-        { 
-        
-        }
-        public Empresa(string nFantasia, string rSocial, string sCadastral, string cNPJ, string dInicio, string rTribunal, int telefone, string cSocial, string cPF, string tipo, string nProprietario, string pEmpresa, string nJuridica)
+        public Empresa()
         {
+
+        }
+        public Empresa(string id, string nFantasia, string rSocial, string sCadastral, string cNPJ, string dInicio, string rTribunal, int telefone, string cSocial, string cPF, string tipo, string nProprietario, string pEmpresa, string nJuridica, string rua, int numero, string avenida, string estado, string cidade, string complemento)
+        {
+            Id = id;
             NFantasia = nFantasia;
             RSocial = rSocial;
             SCadastral = sCadastral;
@@ -49,7 +50,12 @@ namespace Cadastro_20_10_2023
             NProprietario = nProprietario;
             PEmpresa = pEmpresa;
             NJuridica = nJuridica;
-           
+            Rua = rua;
+            Numero = numero;
+            Avenida = avenida;
+            Estado = estado;
+            Cidade = cidade;
+            Complemento = complemento;
         }
     }
 }

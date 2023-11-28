@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cadastro_20_10_2023.Configuracoes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,7 +21,27 @@ namespace Cadastro_20_10_2023
                 dataGridView1.Rows.Add(str.Id, str.NFantasia, str.RSocial, str.SCadastral, str.CNPJ, str.DInicio, str.RTribunal, str.Telefone, str.CSocial, str.CPF, str.Tipo, str.NProprietario, str.PEmpresa, str.NJuridica, str.Rua, str.Numero, str.Avenida, str.Estado, str.Cidade, str.Complemento);
             }
         }
+        public void Consultar()
+        {
+            try
+            {
+                var conexao = new Conexao();
+                var comando = conexao.Comando("SELECT * FROM Funcionario");
+                var leitor = comando.ExecuteReader();
 
+
+                while (leitor.Read())
+                {
+                    Empresa conexao1 = new Empresa(leitor.GetString("id_emp"), leitor.GetString("nomef_emp"), leitor.GetString("rsocial_emp"), leitor.GetString("scadastral_emp"), leitor.GetString("cnpj_emp"), leitor.GetString("dinicio_emp"), leitor.GetString("rtribunal_emp"), leitor.GetInt32("telefone_emp"), leitor.GetString("csocial_emp"), Convert.ToString(leitor.GetString("cpf_emp")), leitor.GetString("tipo_emp"), leitor.GetString("nproprietario_emp"), leitor.GetString("pempresa_emp"), leitor.GetString("njuridica_emp"), leitor.GetString("rua_emp"), leitor.GetInt32("numero_emp"), leitor.GetString("avenida_emp"), leitor.GetString("estado_emp"), leitor.GetString("cidade_emp"), leitor.GetString("complemento_emp"));
+                    Program.listaEmpresa.Add(conexao1);
+                }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
