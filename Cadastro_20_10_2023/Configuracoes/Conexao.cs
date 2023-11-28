@@ -22,7 +22,7 @@ namespace Cadastro_20_10_2023.Configuracoes
         {
             try
             {
-                connection = new MySqlConnection($"server={_servidor}; database={_bancoDadosNome};port={_porta};user={_usuario}; password={_senha}");
+                connection = new MySqlConnection($"server={_servidor};database={_bancoDadosNome};port={_porta};user={_usuario};password={_senha}");
                 connection.Open();
             }
 

@@ -13,61 +13,62 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Cadastro_20_10_2023
 {
-    public partial class TelaCadastro : Form
+    public partial class TelaCadastroFuncionario : Form
     {
-        public List<Funcionario> listaFuncionario = new List<Funcionario>();
-        public TelaCadastro()
+        public TelaCadastroFuncionario()
         {
-            var func = new Funcionario();
             InitializeComponent();
-            Inserir(func);
-            Consultar();
         }
        
         void Inserir(Funcionario f)
         {
-            var nomeFunc = f.Nome;
-            var cpfFunc = f.CPF;
-
             try
             {
+                string nomeFunc = f.Nome;
+                string dataNascimento = f.Dt_Nascimento;
+
+                string cpfFunc = f.CPF;
+                string rg = f.RG;
+                string telefone = f.Telefone;
+                string email = f.Email;
+                string endereco = f.Rua + f.Avenida + f.Numero + f.Cidade + f.Estado + f.Complemento;
+                string estadoCivil = f.Es_Civil;
+                string funcao = f.Funcao;
+                double salario = f.Salario;
+
+
+
                 Conexao conexao = new Conexao();
 
-                var comando = conexao.Comando("INSERT INTO funcionario (nome_fun, cpf_fun) VALUES (@nome, @cpf)");
+                var comando = conexao.Comando("INSERT INTO Funcionario (nome_fun, data_nasc_fun, cpf_fun, rg_fun, telefone_fun, email_fun, endereco_fun, estado_civil_fun, funcao_fun, salario_fun) VALUES (@nome, @dataNascimento, @cpf, @rg, @telefone, @email, @endereco, @estadoCivil, @funcao, @salario)");
                 comando.Parameters.AddWithValue("@nome", nomeFunc);
-                comando.Parameters.AddWithValue("cpf", cpfFunc);
+                comando.Parameters.AddWithValue("@dataNascimento", dataNascimento);
+                comando.Parameters.AddWithValue("@cpf", cpfFunc);
+                comando.Parameters.AddWithValue("@rg", rg);
+                comando.Parameters.AddWithValue("@telefone", telefone);
+                comando.Parameters.AddWithValue("@email", email);
+                comando.Parameters.AddWithValue("@endereco", endereco);
+                comando.Parameters.AddWithValue("@estadoCivil", estadoCivil);
+                comando.Parameters.AddWithValue("@funcao", funcao);
+                comando.Parameters.AddWithValue("@salario", salario);
+
 
                 var resultado = comando.ExecuteNonQuery();
-                
-                if(resultado > 0)
+
+                if (resultado > 0)
                 {
                     MessageBox.Show("Funcionario cadastrado com sucesso");
                 }
             }
-            catch(Exception ex)
+            catch (Exception e)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(e.Message);
             }
+            
+            
+            
         }
-        void Consultar()
-        {
-            try
-            {
-                var conexao = new Conexao();
-                var comando = conexao.Comando("SELECT * FROM funcionario");
-                var leitor = comando.ExecuteReader();
-                string resultado = null;
-                while (leitor.Read())
-                {
-                    resultado += "\n" + leitor.GetString("nome_fun");
-                }
-                MessageBox.Show(resultado);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        
             private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
@@ -121,44 +122,47 @@ namespace Cadastro_20_10_2023
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            if (Verificador.ValidaCPF(txbox_cpf.Text) == false)
+            try
             {
-                MessageBox.Show("CPF invalido");
-            }
-            else if (Verificador.ValidarEmail(txbox_email.Text) == false)
-            {
-                MessageBox.Show("E-mail invalido");
-            }
-            else
-            {
-                try
+
+                if (Verificador.ValidaCPF(txbox_cpf.Text) == false)
                 {
+                    MessageBox.Show("CPF invalido");
+                }
+                else if (Verificador.ValidarEmail(txbox_email.Text) == false)
+                {
+                    MessageBox.Show("E-mail invalido");
+                }
+                else
+                {
+
                     Funcionario f = new Funcionario();
                     f.Nome = txbox_nome.Text;
-                    f.Dt_Nascimento = Convert.ToDateTime(txbox_dn.Text);
-                    f.Telefone = Convert.ToInt32(txbox_telefone.Text);
+                    f.Dt_Nascimento = txbox_dn.Text;
+                    f.Telefone = txbox_telefone.Text;
                     f.Email = txbox_email.Text;
                     f.CPF = txbox_cpf.Text;
                     f.RG = txbox_rg.Text;
                     f.Funcao = txbox_funcao.Text;
                     f.Es_Civil = txbox_ec.Text;
                     f.Salario = Convert.ToDouble(txbox_salario.Text);
+
                     f.Rua = txbox_rua.Text;
                     f.Numero = Convert.ToInt32(txbox_numero.Text);
                     f.Avenida = txbox_avenida.Text;
                     f.Estado = txbox_estado.Text;
                     f.Cidade = txbox_cidade.Text;
                     f.Complemento = txbox_complemento.Text;
-                    
-                    listaFuncionario.Add(f);
-                    MessageBox.Show("Cadastrado com sucesso!");
+
+                    Program.listaFuncionario.Add(f);
+                    Inserir(f);
+
 
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erro! Verifique se todos os parametros foram inseridos corretamente.");
-                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
             }
         }
 
@@ -188,6 +192,11 @@ namespace Cadastro_20_10_2023
             txbox_cidade.Text = "";
             txbox_numero.Text = "";
             txbox_complemento.Text = "";
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

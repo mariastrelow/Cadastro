@@ -9,15 +9,21 @@ namespace Cadastro_20_10_2023
     internal static class Program
     {
         public static List<Funcionario> listaFuncionario = new List<Funcionario>();
+        public static List<Empresa> listaEmpresa = new List<Empresa>();
         /// <summary>
         /// Ponto de entrada principal para o aplicativo.
         /// </summary>
         [STAThread]
         static void Main()
         {
+            
             if (listaFuncionario.Count > 1)
             {
                 listaFuncionario.RemoveAt(0);
+            }
+            if (listaEmpresa.Count > 1)
+            {
+                listaEmpresa.RemoveAt(0);
             }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

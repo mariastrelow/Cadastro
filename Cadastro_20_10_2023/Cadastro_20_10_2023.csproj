@@ -104,46 +104,47 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuracoes\Conexao.cs" />
-    <Compile Include="DAOHelper.cs" />
-    <Compile Include="ListaFuncionario.cs">
+    <Compile Include="Configuracoes\DAOHelper.cs" />
+    <Compile Include="Empresa.cs" />
+    <Compile Include="Telas\ListaFuncionario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListaFuncionario.Designer.cs">
+    <Compile Include="Telas\ListaFuncionario.Designer.cs">
       <DependentUpon>ListaFuncionario.cs</DependentUpon>
     </Compile>
-    <Compile Include="TelaCadastroEmpresa.cs">
+    <Compile Include="Telas\TelaCadastroEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TelaCadastroEmpresa.Designer.cs">
+    <Compile Include="Telas\TelaCadastroEmpresa.Designer.cs">
       <DependentUpon>TelaCadastroEmpresa.cs</DependentUpon>
     </Compile>
-    <Compile Include="TelaEmpresa.cs">
+    <Compile Include="Telas\ListaEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TelaEmpresa.Designer.cs">
-      <DependentUpon>TelaEmpresa.cs</DependentUpon>
+    <Compile Include="Telas\ListaEmpresa.Designer.cs">
+      <DependentUpon>ListaEmpresa.cs</DependentUpon>
     </Compile>
-    <Compile Include="Verificador.cs" />
-    <Compile Include="TelaCadastro.cs">
+    <Compile Include="Configuracoes\Verificador.cs" />
+    <Compile Include="Telas\TelaCadastroFuncionario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TelaCadastro.Designer.cs">
-      <DependentUpon>TelaCadastro.cs</DependentUpon>
+    <Compile Include="Telas\TelaCadastroFuncionario.Designer.cs">
+      <DependentUpon>TelaCadastroFuncionario.cs</DependentUpon>
     </Compile>
-    <Compile Include="TelaInicial.cs">
+    <Compile Include="Telas\TelaInicial.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TelaInicial.Designer.cs">
+    <Compile Include="Telas\TelaInicial.Designer.cs">
       <DependentUpon>TelaInicial.cs</DependentUpon>
     </Compile>
     <Compile Include="Funcionario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ListaFuncionario.resx">
+    <EmbeddedResource Include="Telas\ListaFuncionario.resx">
       <DependentUpon>ListaFuncionario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TelaCadastro.resx">
-      <DependentUpon>TelaCadastro.cs</DependentUpon>
+    <EmbeddedResource Include="Telas\TelaCadastroFuncionario.resx">
+      <DependentUpon>TelaCadastroFuncionario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -154,13 +155,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="TelaCadastroEmpresa.resx">
+    <EmbeddedResource Include="Telas\TelaCadastroEmpresa.resx">
       <DependentUpon>TelaCadastroEmpresa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TelaEmpresa.resx">
-      <DependentUpon>TelaEmpresa.cs</DependentUpon>
+    <EmbeddedResource Include="Telas\ListaEmpresa.resx">
+      <DependentUpon>ListaEmpresa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TelaInicial.resx">
+    <EmbeddedResource Include="Telas\TelaInicial.resx">
       <DependentUpon>TelaInicial.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

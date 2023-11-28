@@ -10,7 +10,6 @@ C:\Users\Duda\source\repos\Cadastro_20_10_2023\Cadastro_20_10_2023\obj\Debug\Cad
 C:\Users\Duda\source\repos\Cadastro_20_10_2023\Cadastro_20_10_2023\obj\Debug\Cadastro_20_10_2023.TelaInicial.resources
 C:\Users\Duda\source\repos\Cadastro_20_10_2023\Cadastro_20_10_2023\bin\Debug\Guna.UI2.dll
 C:\Users\Duda\source\repos\Cadastro_20_10_2023\Cadastro_20_10_2023\obj\Debug\Cadastro_20_10_2023.csproj.CopyComplete
-C:\Users\Duda\source\repos\Cadastro_20_10_2023\Cadastro_20_10_2023\obj\Debug\Cadastro_20_10_2023.TelaCadastro.resources
 C:\Users\Duda\source\repos\Cadastro_20_10_2023\Cadastro_20_10_2023\bin\Debug\BouncyCastle.Cryptography.dll
 C:\Users\Duda\source\repos\Cadastro_20_10_2023\Cadastro_20_10_2023\bin\Debug\Google.Protobuf.dll
 C:\Users\Duda\source\repos\Cadastro_20_10_2023\Cadastro_20_10_2023\bin\Debug\K4os.Compression.LZ4.dll
@@ -44,4 +43,5 @@ C:\Users\Duda\source\repos\Cadastro_20_10_2023\Cadastro_20_10_2023\bin\Debug\Sys
 C:\Users\Duda\source\repos\Cadastro_20_10_2023\Cadastro_20_10_2023\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Duda\source\repos\Cadastro_20_10_2023\Cadastro_20_10_2023\obj\Debug\Cadastro_20_10_2023.ListaFuncionario.resources
 C:\Users\Duda\source\repos\Cadastro_20_10_2023\Cadastro_20_10_2023\obj\Debug\Cadastro_20_10_2023.TelaCadastroEmpresa.resources
-C:\Users\Duda\source\repos\Cadastro_20_10_2023\Cadastro_20_10_2023\obj\Debug\Cadastro_20_10_2023.TelaEmpresa.resources
+C:\Users\Duda\source\repos\Cadastro_20_10_2023\Cadastro_20_10_2023\obj\Debug\Cadastro_20_10_2023.TelaCadastroFuncionario.resources
+C:\Users\Duda\source\repos\Cadastro_20_10_2023\Cadastro_20_10_2023\obj\Debug\Cadastro_20_10_2023.ListaEmpresa.resources
