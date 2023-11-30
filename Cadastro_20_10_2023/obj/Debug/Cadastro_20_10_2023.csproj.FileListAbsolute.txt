@@ -45,3 +45,5 @@ C:\Users\Duda\source\repos\Cadastro_20_10_2023\Cadastro_20_10_2023\obj\Debug\Cad
 C:\Users\Duda\source\repos\Cadastro_20_10_2023\Cadastro_20_10_2023\obj\Debug\Cadastro_20_10_2023.TelaCadastroEmpresa.resources
 C:\Users\Duda\source\repos\Cadastro_20_10_2023\Cadastro_20_10_2023\obj\Debug\Cadastro_20_10_2023.TelaCadastroFuncionario.resources
 C:\Users\Duda\source\repos\Cadastro_20_10_2023\Cadastro_20_10_2023\obj\Debug\Cadastro_20_10_2023.ListaEmpresa.resources
+C:\Users\Duda\source\repos\Cadastro_20_10_2023\Cadastro_20_10_2023\bin\Debug\Flunt.Br.dll
+C:\Users\Duda\source\repos\Cadastro_20_10_2023\Cadastro_20_10_2023\bin\Debug\Flunt.dll

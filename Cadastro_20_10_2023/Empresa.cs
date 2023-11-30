@@ -16,7 +16,7 @@ namespace Cadastro_20_10_2023
         public string CNPJ { get; set; }
         public  string DInicio { get; set; }
         public string RTribunal { get; set; }
-        public int Telefone { get; set; }
+        public string Telefone { get; set; }
         public string CSocial { get; set; }
         public string CPF { get; set; }
         public string Tipo { get; set; }
@@ -24,7 +24,7 @@ namespace Cadastro_20_10_2023
         public string PEmpresa { get; set; }
         public string NJuridica { get; set; }
         public string Rua { get; set; }
-        public int Numero { get; set; }
+        public string Numero { get; set; }
         public string Avenida { get; set; }
         public string Estado { get; set; }
         public string Cidade { get; set; }
@@ -34,7 +34,7 @@ namespace Cadastro_20_10_2023
         {
 
         }
-        public Empresa(string id, string nFantasia, string rSocial, string sCadastral, string cNPJ, string dInicio, string rTribunal, int telefone, string cSocial, string cPF, string tipo, string nProprietario, string pEmpresa, string nJuridica, string rua, int numero, string avenida, string estado, string cidade, string complemento)
+        public Empresa(string id, string nFantasia, string rSocial, string sCadastral, string cNPJ, string dInicio, string rTribunal, string telefone, string cSocial, string cPF, string tipo, string nProprietario, string pEmpresa, string nJuridica, string rua, string numero, string avenida, string estado, string cidade, string complemento)
         {
             Id = id;
             NFantasia = nFantasia;

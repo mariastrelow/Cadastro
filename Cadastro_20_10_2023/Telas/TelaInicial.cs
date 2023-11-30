@@ -17,6 +17,7 @@ namespace Cadastro_20_10_2023
         public TelaInicial()
         {
             InitializeComponent();
+            StartTimer();
         }
         private static TelaInicial instanciaForm1 = null;
 
@@ -32,11 +33,6 @@ namespace Cadastro_20_10_2023
             formulario.Dock = DockStyle.Fill;
             this.panelChildForm.Controls.Add(formulario);
             formulario.Show();
-
-        }
-        private void menu_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -51,51 +47,32 @@ namespace Cadastro_20_10_2023
             Application.Exit();
         }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-            ListaFuncionario T = new ListaFuncionario();
-            T.Show();
-            this.Hide();
-        }
 
         private void panelSideMenu_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void menuTrans_Tick(object sender, EventArgs e)
-        {
-
-            if (sidebarExpand == false)
-            {
-                sidebear.Width -= 100;
-                if (menuContainer.Height == 251)
-                {
-                    menuTrans.Stop();
-                    sidebarExpand = true;
-                }
-                else
-                {
-                    menuContainer.Height -= 10;
-                    if (sidebear.Height <= 50)
-                    {
-                        menuTrans.Stop();
-                        sidebarExpand = false;
-                    }
-                }
-            }
-        }
         private void selecionado_Click(object sender, EventArgs e)
         {
+            sidebarExpand = !sidebarExpand;
             sidebarTrans.Start();
         }
         bool sidebarExpand = true;
         private void sidebarTrans_Tick(object sender, EventArgs e)
         {
+            const int minSidebarWidth = 10;
+            const int maxSidebarWidth = 279;
+            const int sidebarStep = 30;
+
             if (sidebarExpand)
             {
-                sidebear.Width -= 10;
-                if (selecionado.Width <= 50)
+                // Expandir o menu lateral
+                if (sidebear.Width < maxSidebarWidth)
+                {
+                    sidebear.Width += sidebarStep;
+                }
+                else
                 {
                     sidebarExpand = false;
                     sidebarTrans.Stop();
@@ -103,8 +80,12 @@ namespace Cadastro_20_10_2023
             }
             else
             {
-                sidebear.Width += 10;
-                if (sidebear.Width >= 251)
+                // Recolher o menu lateral
+                if (sidebear.Width > minSidebarWidth)
+                {
+                    sidebear.Width -= sidebarStep;
+                }
+                else
                 {
                     sidebarExpand = true;
                     sidebarTrans.Stop();
@@ -112,7 +93,7 @@ namespace Cadastro_20_10_2023
             }
         }
 
-        private void panelChildForm_Paint(object sender, PaintEventArgs e)
+    private void panelChildForm_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -149,7 +130,18 @@ namespace Cadastro_20_10_2023
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
+            if (instanciaForm1 == null || instanciaForm1.IsDisposed)
+            {
+                instanciaForm1 = new TelaInicial();
+                instanciaForm1.Show();
+            }
+        }
 
+        private void StartTimer()
+        {
+            sidebarTrans.Interval = 100;
+            sidebarTrans.Tick += sidebarTrans_Tick;
+            sidebarTrans.Start();
         }
     }
 }

@@ -41,7 +41,6 @@
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.sidebarTrans = new System.Windows.Forms.Timer(this.components);
-            this.menuTrans = new System.Windows.Forms.Timer(this.components);
             this.sidebear = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -80,7 +79,7 @@
             this.guna2CircleButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2CircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2CircleButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2CircleButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.guna2CircleButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(0)))), ((int)(((byte)(104)))));
             this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton1.Location = new System.Drawing.Point(1176, 5);
@@ -123,7 +122,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(-23, 164);
+            this.label1.Location = new System.Drawing.Point(-21, 162);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(324, 19);
             this.label1.TabIndex = 5;
@@ -160,7 +159,7 @@
             this.menuContainer.Location = new System.Drawing.Point(3, 200);
             this.menuContainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.menuContainer.Name = "menuContainer";
-            this.menuContainer.Size = new System.Drawing.Size(271, 51);
+            this.menuContainer.Size = new System.Drawing.Size(276, 51);
             this.menuContainer.TabIndex = 0;
             // 
             // guna2Button4
@@ -182,7 +181,7 @@
             this.guna2Button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.PressedColor = System.Drawing.Color.Navy;
-            this.guna2Button4.Size = new System.Drawing.Size(258, 56);
+            this.guna2Button4.Size = new System.Drawing.Size(269, 56);
             this.guna2Button4.TabIndex = 7;
             this.guna2Button4.Text = "  Menu";
             this.guna2Button4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -208,7 +207,7 @@
             this.guna2Button5.Name = "guna2Button5";
             this.guna2Button5.Size = new System.Drawing.Size(285, 61);
             this.guna2Button5.TabIndex = 8;
-            this.guna2Button5.Text = "   Cadastro funcionario";
+            this.guna2Button5.Text = "  Cadastro funcionario";
             this.guna2Button5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button5.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click);
@@ -217,7 +216,7 @@
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(50, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(75, 23);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(129, 121);
@@ -229,11 +228,6 @@
             this.sidebarTrans.Interval = 10;
             this.sidebarTrans.Tick += new System.EventHandler(this.sidebarTrans_Tick);
             // 
-            // menuTrans
-            // 
-            this.menuTrans.Interval = 10;
-            this.menuTrans.Tick += new System.EventHandler(this.menuTrans_Tick);
-            // 
             // sidebear
             // 
             this.sidebear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(0)))), ((int)(((byte)(104)))));
@@ -244,10 +238,10 @@
             this.sidebear.Controls.Add(this.panel2);
             this.sidebear.Controls.Add(this.panel6);
             this.sidebear.Location = new System.Drawing.Point(0, 48);
-            this.sidebear.MaximumSize = new System.Drawing.Size(251, 673);
+            this.sidebear.MaximumSize = new System.Drawing.Size(279, 673);
             this.sidebear.MinimumSize = new System.Drawing.Size(46, 673);
             this.sidebear.Name = "sidebear";
-            this.sidebear.Size = new System.Drawing.Size(251, 673);
+            this.sidebear.Size = new System.Drawing.Size(279, 673);
             this.sidebear.TabIndex = 0;
             this.sidebear.Paint += new System.Windows.Forms.PaintEventHandler(this.sidebear_Paint);
             // 
@@ -257,7 +251,7 @@
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Location = new System.Drawing.Point(3, 3);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(254, 192);
+            this.guna2Panel1.Size = new System.Drawing.Size(276, 192);
             this.guna2Panel1.TabIndex = 10;
             // 
             // panel5
@@ -386,7 +380,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer sidebarTrans;
-        private System.Windows.Forms.Timer menuTrans;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private System.Windows.Forms.Panel menuContainer;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;

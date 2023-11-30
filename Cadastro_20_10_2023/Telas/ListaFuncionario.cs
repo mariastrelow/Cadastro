@@ -17,6 +17,7 @@ namespace Cadastro_20_10_2023
     public ListaFuncionario()
         {
             InitializeComponent();
+            Program.listaEmpresa.Clear();
             Consultar();
             foreach(Funcionario str in Program.listaFuncionario)
             {

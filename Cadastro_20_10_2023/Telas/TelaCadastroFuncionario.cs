@@ -166,30 +166,20 @@ namespace Cadastro_20_10_2023
 
         }
 
-        private void guna2CircleButton1_Click(object sender, EventArgs e)
-        {
-            TelaInicial t = new TelaInicial();
-            t.Close();
-            this.Close();
-        }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            txbox_nome.Text = "";
-            txbox_cpf.Text = "";
-            txbox_dn.Text = "";
-            txbox_rg.Text = "";
-            txbox_ec.Text = "";
-            txbox_salario.Text = "";
-            txbox_rua.Text = "";
-            txbox_avenida.Text = "";
-            txbox_estado.Text = "";
-            txbox_cidade.Text = "";
-            txbox_numero.Text = "";
-            txbox_complemento.Text = "";
-        }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            TelaInicial t = new TelaInicial();
+            t.AbrirFormulario(new TelaCadastroFuncionario());
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

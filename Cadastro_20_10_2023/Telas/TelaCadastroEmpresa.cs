@@ -26,7 +26,7 @@ namespace Cadastro_20_10_2023
             string cnpj = em.CNPJ;
             string data = em.DInicio;
             string rTribunal = em.RTribunal;
-            int telefone = em.Telefone;
+            string telefone = em.Telefone;
             string cSocial = em.CSocial;
             string tipo = em.Tipo;
             string cpf = em.CPF;
@@ -34,12 +34,12 @@ namespace Cadastro_20_10_2023
             string nproprietario = em.NProprietario;
             string njuridica = em.NJuridica;
             string rua = em.Rua;
-            int numero = em.Numero;
+            string numero = em.Numero;
             string avenida = em.Avenida;
             string estado = em.Estado;
             string cidade = em.Cidade;
             string complemento = em.Complemento;
-            
+
             Conexao conexao = new Conexao();
 
             var comando = conexao.Comando("INSERT INTO Empresa (nomef_emp, rsocial_emp, scadastral_emp, cnpj_emp, dinicio_emp, rtribunal_emp, telefone_emp, csocial_emp, cpf_emp, tipo_emp, nproprietario_emp, pempresa_emp, rua_emp, numero_emp, avenida_emp, cidade_emp,complemento_emp ) VALUES " + "(@nomef, @rsocial, @scadastral, @cnpj, @dinicio, @rtribunal, @telefone, @csocial, @cpf, @tipo, @nproprietario, @pempresa, @njuridica, @rua, @numero, @avenida, @cidade, @complemento)");
@@ -82,6 +82,9 @@ namespace Cadastro_20_10_2023
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+
+
             if (Verificador.ValidarCNPJ(txbox_cnpj.Text) == false)
             {
                 MessageBox.Show("O CNPJ inserido é invalido!");
@@ -117,7 +120,7 @@ namespace Cadastro_20_10_2023
                     {
                         em.RTribunal = null;
                     }
-                    em.Telefone = Convert.ToInt32(txbox_telefone.Text);
+                    em.Telefone = txbox_telefone.Text;
                     if (rdbox_Tm.Checked)
                     {
                         em.Tipo = "Matriz";
@@ -147,7 +150,7 @@ namespace Cadastro_20_10_2023
                     em.NJuridica = txbox_nj.Text;
 
                     em.Rua = txbox_rua.Text;
-                    em.Numero = Convert.ToInt32(txbox_numero.Text);
+                    em.Numero = txbox_numero.Text;
                     em.Avenida = txbox_avenida.Text;
                     em.Estado = txbox_estado.Text;
                     em.Cidade = txbox_cidade.Text;
@@ -155,13 +158,17 @@ namespace Cadastro_20_10_2023
 
                     Program.listaEmpresa.Add(em);
                     Inserir(em);
-                  
                 }
+
                 catch (Exception ex)
                 {
-
+                    MessageBox.Show("Erro: " + ex.Message);
                 }
             }
+
         }
+
     }
 }
+
+
