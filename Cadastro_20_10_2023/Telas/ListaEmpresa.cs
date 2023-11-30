@@ -28,7 +28,7 @@ namespace Cadastro_20_10_2023
             try
             {
                 var conexao = new Conexao();
-                var comando = conexao.Comando("SELECT * FROM Funcionario");
+                var comando = conexao.Comando("SELECT * FROM Empresa");
                 var leitor = comando.ExecuteReader();
 
 

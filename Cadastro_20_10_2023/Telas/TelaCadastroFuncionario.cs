@@ -36,6 +36,7 @@ namespace Cadastro_20_10_2023
                 string funcao = f.Funcao;
                 double salario = f.Salario;
 
+
                 Conexao conexao = new Conexao();
 
                 var comando = conexao.Comando("INSERT INTO Funcionario (nome_fun, data_nasc_fun, cpf_fun, rg_fun, telefone_fun, email_fun, endereco_fun, estado_civil_fun, funcao_fun, salario_fun) VALUES (@nome, @dataNascimento, @cpf, @rg, @telefone, @email, @endereco, @estadoCivil, @funcao, @salario)");

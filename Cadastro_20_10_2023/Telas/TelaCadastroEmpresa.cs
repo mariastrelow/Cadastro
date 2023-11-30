@@ -148,6 +148,8 @@ namespace Cadastro_20_10_2023
                     }
                     em.NProprietario = txbox_np.Text;
                     em.NJuridica = txbox_nj.Text;
+                    em.CSocial = txbox_cs.Text;
+                    em.CPF = txbox_cpf.Text;
 
                     em.Rua = txbox_rua.Text;
                     em.Numero = txbox_numero.Text;
