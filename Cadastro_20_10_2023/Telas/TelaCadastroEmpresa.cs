@@ -42,7 +42,7 @@ namespace Cadastro_20_10_2023
 
             Conexao conexao = new Conexao();
 
-            var comando = conexao.Comando("INSERT INTO Empresa (nomef_emp, rsocial_emp, scadastral_emp, cnpj_emp, dinicio_emp, rtribunal_emp, telefone_emp, csocial_emp, cpf_emp, tipo_emp, nproprietario_emp, pempresa_emp, rua_emp, numero_emp, avenida_emp, cidade_emp,complemento_emp ) VALUES " + "(@nomef, @rsocial, @scadastral, @cnpj, @dinicio, @rtribunal, @telefone, @csocial, @cpf, @tipo, @nproprietario, @pempresa, @njuridica, @rua, @numero, @avenida, @cidade, @complemento)");
+            var comando = conexao.Comando("INSERT INTO Empresa (nomef_emp, rsocial_emp, scadastral_emp, cnpj_emp, dinicio_emp, rtribunal_emp, telefone_emp, csocial_emp, cpf_emp, tipo_emp, nproprietario_emp, pempresa_emp, njuridica_emp, rua_emp, numero_emp, avenida_emp, cidade_emp,complemento_emp ) VALUES " + "(@nomef, @rsocial, @scadastral, @cnpj, @dinicio, @rtribunal, @telefone, @csocial, @cpf, @tipo, @nproprietario, @pempresa, @njuridica, @rua, @numero, @avenida, @cidade, @complemento)");
             comando.Parameters.AddWithValue("@nomef", nFantasia);
             comando.Parameters.AddWithValue("@rsocial", rSocial);
             comando.Parameters.AddWithValue("@scadastral", sCadastral);

@@ -48,5 +48,16 @@ namespace Cadastro_20_10_2023
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TelaInicial t = new TelaInicial();
+            t.AbrirFormulario(new TelaCadastroEmpresa());
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
